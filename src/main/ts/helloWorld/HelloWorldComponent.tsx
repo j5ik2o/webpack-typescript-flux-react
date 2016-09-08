@@ -45,6 +45,6 @@ export class HelloWorldComponent extends React.Component<{}, HelloWorldState> {
             <div>
                 commit: <span>{this.state.completedMessage}</span>
             </div>
-        </div>
+        </div>;
     }
 }

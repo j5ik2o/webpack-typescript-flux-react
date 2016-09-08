@@ -21,6 +21,9 @@
     },
     "react/react.d.ts": {
       "ref": "acf595149c4d91f47788b22a9a78b8c07cfa4bfe"
+    },
+    "react-router/react-router.d.ts": {
+      "ref": "acf595149c4d91f47788b22a9a78b8c07cfa4bfe"
     }
   }
 }
