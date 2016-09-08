@@ -55,6 +55,7 @@
   "dependencies": {
     "core-js": "^2.4.1",
     "flux": "^2.1.1",
+    "lodash": "^4.15.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-router": "^2.7.0"

@@ -4,6 +4,7 @@ import { HelloWorldActionCreator } from './HelloWorldActionCreator';
 import { helloWorldStore } from './HelloWorldStore';
 
 export class HelloWorldComponent extends React.Component<{}, HelloWorldState> {
+
     private listenerSubscription: { remove: Function };
 
     constructor(props: {}) {

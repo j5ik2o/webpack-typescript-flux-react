@@ -1,3 +1,4 @@
+import * as Flux from 'flux';
 import * as FluxUtils from 'flux/utils';
 import { HelloWorldState } from './HelloWorldState';
 import { HelloWorldAction } from './HelloWorldAction';

@@ -11,6 +11,7 @@ export class ApplicationComponent extends React.Component<Props, {}> {
             <ul>
                 <li><ReactRouter.Link to="/">Home</ReactRouter.Link></li>
                 <li><ReactRouter.Link to="helloWorld">Hello World</ReactRouter.Link></li>
+                <li><ReactRouter.Link to="todo">Todo</ReactRouter.Link></li>
             </ul>
             {this.props.children}
         </div>;
