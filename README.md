@@ -26,6 +26,6 @@ open http://localhost:3000/
 
 ## Example
 
-- Hello World, as Simple Component.
-- Simple Todo Applilcation,  DDD based
+- [Simple Hello World Component](src/main/helloWorld/README.md)
+- [Simple TODO Component, as Flux + DDD based](src/main/ts/todo/README.md)
 
