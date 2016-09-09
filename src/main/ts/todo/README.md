@@ -53,9 +53,11 @@ ui layer -> application layer -> domain layer
 
 Flux's Store is to support Application Logic and Application State. Even DDD, The roles of the Repository and Aggregate are like it, 
 but Flux's Store and DDD's Repository with Aggregate difference is responsibility in the Layer.
-Flux's Store is in the Application Layer as the application's requirement, DDD's Repository with Aggregate are in the Domain Layer which represent the domain's concept.
+Flux's Store is in the Application Layer as the application's requirement, DDD's Repository with Aggregate are in the Domain Layer which represent the domain's concept. My idea is to implement Flux's Store by using DDD's Repository with Aggregate.
 
 ## How to integrate for Flux and DDD
+
+According to the above way of thinking:
 
 - Store which represent the Application State with Application Logic of Flux is realize by DDD's Repository and Aggregate.
 - To convert from DDD's Aggregate to the view model which is used in React.Component.  
