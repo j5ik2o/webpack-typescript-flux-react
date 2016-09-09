@@ -2,6 +2,7 @@
  * @author Junichi Kato
  */
 import { TodoAggregate } from './TodoAggregate';
+import * as _ from 'lodash';
 
 /**
  * The repository of DDD for {@class TodoAggregate}.
@@ -20,7 +21,7 @@ export class TodoRepository {
    * @param aggregate
    */
   store(aggregate: TodoAggregate): void {
-    this._todos[aggregate.id] = aggregate;
+    this._todos[aggregate.id] = _.cloneDeep(aggregate);
   }
 
   /**
@@ -39,7 +40,7 @@ export class TodoRepository {
    * @returns {TodoAggregate}
    */
   resoleBy(id: string): TodoAggregate {
-    return this._todos[id];
+    return _.cloneDeep(this._todos[id]);
   }
 
   /**
@@ -48,9 +49,7 @@ export class TodoRepository {
    * @returns {TodoAggregate[]}
    */
   resolveAll(): TodoAggregate[] {
-    const result = Object.keys(this._todos).map((id) => this._todos[id]);
-    console.log(result);
-    return result;
+    return Object.keys(this._todos).map((id) => this.resoleBy(id));
   }
 
 }

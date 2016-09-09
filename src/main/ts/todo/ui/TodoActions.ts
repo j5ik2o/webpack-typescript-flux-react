@@ -1,20 +1,15 @@
 /**
  * @author Junichi Kato
  */
-import { Action } from '../../Action';
 
-/**
- * The super type for each action.
- */
-export interface TodoAction extends Action {
-}
 
+import { TodoAction } from '../application/TodoAction';
 /**
  * The action for creating {@class TodoAggregate}.
  */
 export class CreateTodo implements TodoAction {
 
-  type: string = "CreateTodo";
+  type: string = 'CreateTodo';
 
   /**
    * @constructor

@@ -2,7 +2,7 @@
  * @author Junichi Kato
  */
 import * as Flux from 'flux';
-import { TodoAction } from './TodoActions';
+import { TodoAction } from '../application/TodoAction';
 
 /**
  * The dispatcher for {@class TodoAction}.

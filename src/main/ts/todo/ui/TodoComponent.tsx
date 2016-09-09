@@ -6,7 +6,7 @@ import * as React from 'react';
 import { TodoState } from '../application/TodoState';
 import { TodoRepository } from '../domain/TodoRepository';
 import { todoStore } from '../application/TodoStore';
-import { TodoActionCreator } from '../application/TodoActionCreator';
+import { TodoActionCreator } from './TodoActionCreator';
 import { TodoViewModelConverter } from './TodoViewModelConverter';
 
 /**

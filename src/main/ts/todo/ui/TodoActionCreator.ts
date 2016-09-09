@@ -1,7 +1,7 @@
 /**
  * @author Junichi Kato
  */
-import { todoDispatcher } from './TodoDispatcher';
+import { todoDispatcher } from '../application/TodoDispatcher';
 import { CreateTodo } from './TodoActions';
 
 /**

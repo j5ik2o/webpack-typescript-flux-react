@@ -1,11 +1,12 @@
 import * as Flux from 'flux';
 import * as FluxUtils from 'flux/utils';
 import { TodoState } from './TodoState';
-import { TodoAction, CreateTodo } from './TodoActions';
+import { TodoAction } from '../application/TodoAction';
 import { TodoRepository } from '../domain/TodoRepository';
 import { TodoAggregate } from '../domain/TodoAggregate';
 import { Guid } from '../infrastructure/Guid';
 import { todoDispatcher } from './TodoDispatcher';
+import { CreateTodo } from '../ui/TodoActions';
 
 /**
  * The ReducerStore for the {@class TodoState} and {@class TodoAction}.
