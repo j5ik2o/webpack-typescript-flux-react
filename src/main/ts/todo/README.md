@@ -1,4 +1,4 @@
-# TODO Application as Flux + DDD based.
+# TODO Application based on Flux with DDD
 
 This application is simple TODO application by both Flux and DDD based.(It's state sourcing, not event sourcing)
 
