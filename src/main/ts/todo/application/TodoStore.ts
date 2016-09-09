@@ -1,3 +1,7 @@
+/**
+ * @author Junichi Kato
+ */
+///<reference path='../../../../../typings/flux/flux.d.ts'/>
 import * as Flux from 'flux';
 import * as FluxUtils from 'flux/utils';
 import { TodoState } from './TodoState';

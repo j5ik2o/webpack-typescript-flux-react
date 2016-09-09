@@ -2,7 +2,6 @@
  * @author Junichi Kato
  */
 
-
 import { TodoAction } from '../application/TodoAction';
 /**
  * The action for creating {@class TodoAggregate}.

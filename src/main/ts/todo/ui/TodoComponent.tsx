@@ -2,6 +2,8 @@
  * @author Junichi Kato
  */
 
+///<reference path='../../../../../typings/flux/flux.d.ts'/>
+
 import * as React from 'react';
 import { TodoState } from '../application/TodoState';
 import { TodoRepository } from '../domain/TodoRepository';
@@ -13,6 +15,7 @@ import { TodoViewModelConverter } from './TodoViewModelConverter';
  * The React's View Component for Todo.
  */
 export class TodoComponent extends React.Component<{}, TodoState> {
+
 
   private listenerSubscription: { remove: Function };
 
@@ -30,11 +33,9 @@ export class TodoComponent extends React.Component<{}, TodoState> {
   }
 
   handleStateChange() {
-    const _state = todoStore.getState();
-    const todos = _state.getRepository().resolveAll();
-    const repository = new TodoRepository();
-    repository.storeMulti(todos);
-    const state = new TodoState(_state.currentTodo, repository);
+    const storeState = todoStore.getState();
+    const repository = new TodoRepository(storeState.getRepository().resolveAll());
+    const state = new TodoState(storeState.currentTodo, repository);
     this.setState(state);
   }
 

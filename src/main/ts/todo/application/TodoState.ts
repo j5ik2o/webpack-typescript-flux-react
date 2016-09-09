@@ -1,6 +1,7 @@
 /**
  * @author Junichi Kato
  */
+///<reference path='../../../../../typings/lodash/lodash.d.ts'/>
 import { TodoRepository } from '../domain/TodoRepository';
 import * as _ from 'lodash';
 

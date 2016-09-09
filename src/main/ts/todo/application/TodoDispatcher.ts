@@ -1,3 +1,5 @@
+///<reference path='../../../../../typings/flux/flux.d.ts'/>
+
 /**
  * @author Junichi Kato
  */

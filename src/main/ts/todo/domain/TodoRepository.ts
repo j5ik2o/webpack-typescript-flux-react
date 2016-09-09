@@ -1,3 +1,4 @@
+///<reference path='../../../../../typings/lodash/lodash.d.ts'/>
 /**
  * @author Junichi Kato
  */
