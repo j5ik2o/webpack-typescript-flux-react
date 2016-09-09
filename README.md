@@ -2,6 +2,13 @@
 
 Template Project by Webpack and TypeScript 2.0, Flux with React
 
+## Frameworks/libraries that use mainly.
+
+- flux
+- react
+- react-router
+- lodash
+
 ## How to build
 
 ```sh
@@ -19,6 +26,6 @@ open http://localhost:3000/
 
 ## Example
 
-- helloWorld
-- Todo by DDD based
+- Hello World, as Simple Component.
+- Simple Todo Applilcation,  DDD based
 
