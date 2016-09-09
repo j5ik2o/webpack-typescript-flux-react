@@ -1,3 +1,11 @@
+/**
+ * @author Junichi Kato
+ */
+
+/**
+ * The base class for Action.
+ */
 export interface Action {
-    type: string
+    /** The property that represent the kind of Action. */
+        type: string
 }

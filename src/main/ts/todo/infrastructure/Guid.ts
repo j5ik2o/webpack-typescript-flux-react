@@ -1,3 +1,10 @@
+/**
+ * @author Junichi Kato
+ */
+
+/**
+ * GUID class.
+ */
 export class Guid {
     private str: string;
 

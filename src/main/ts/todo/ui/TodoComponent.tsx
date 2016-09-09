@@ -1,11 +1,17 @@
+/**
+ * @author Junichi Kato
+ */
+
 import * as React from 'react';
 import { TodoState } from '../application/TodoState';
 import { TodoRepository } from '../domain/TodoRepository';
-import { todoDispatcher } from '../application/TodoDispatcher';
-import { CreateTodo } from '../application/TodoActions';
 import { todoStore } from '../application/TodoStore';
 import { TodoActionCreator } from '../application/TodoActionCreator';
+import { TodoViewModelConverter } from './TodoViewModelConverter';
 
+/**
+ * The React's View Component for Todo.
+ */
 export class TodoComponent extends React.Component<{}, TodoState> {
 
     private listenerSubscription: { remove: Function };
@@ -42,11 +48,12 @@ export class TodoComponent extends React.Component<{}, TodoState> {
     }
 
     render(): JSX.Element {
+        const todos = new TodoViewModelConverter(this.state.getRepository()).getTodoVMs();
         return <div>
             <input type='input' value={this.state.currentTodo} onChange={this.handleValueChange.bind(this)}/>
             <button onClick={this.handleClick.bind(this)}>Update</button>
             <div>
-            {this.state.getTodoVMs().map((a) => {
+            {todos.map((a) => {
                 return <p key={a.key}>{a.text} : {a.dateString}</p>;
             })}
             </div>
