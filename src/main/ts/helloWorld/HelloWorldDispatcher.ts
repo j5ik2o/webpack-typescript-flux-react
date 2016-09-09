@@ -1,4 +1,12 @@
+/**
+ * @author Junichi Kato
+ */
 import * as Flux from 'flux';
-import { Action } from '../Action';
+import { HelloWorldAction } from './HelloWorldAction';
 
-export const helloWorldDispatcher = new Flux.Dispatcher<Action>();
+/**
+ * The dispatcher for {@class HelloWorldAction}.
+ *
+ * @type {Flux.Dispatcher<HelloWorldAction>}
+ */
+export const helloWorldDispatcher = new Flux.Dispatcher<HelloWorldAction>();

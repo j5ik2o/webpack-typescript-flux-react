@@ -9,13 +9,13 @@ import { TodoRepository } from '../domain/TodoRepository';
  */
 export class TodoViewModelConverter {
 
-    constructor(private _repository: TodoRepository){
-    }
+  constructor(private _repository: TodoRepository) {
+  }
 
-    getTodoVMs = (): TodoViewModel[] => {
-        return this._repository.resolveAll().map((a) => {
-            return new TodoViewModel(a.id, a.text, a.createAt.toLocaleDateString() + " " + a.createAt.toLocaleTimeString());
-        });
-    };
+  getTodoVMs = (): TodoViewModel[] => {
+    return this._repository.resolveAll().map((a) => {
+      return new TodoViewModel(a.id, a.text, a.createAt.toLocaleDateString() + " " + a.createAt.toLocaleTimeString());
+    });
+  };
 
 }

@@ -1,3 +1,6 @@
+/**
+ * @author Junichi Kato
+ */
 import { Action } from '../../Action';
 
 /**
@@ -7,13 +10,18 @@ export interface TodoAction extends Action {
 }
 
 /**
- * The action for creating todo.
+ * The action for creating {@class TodoAggregate}.
  */
 export class CreateTodo implements TodoAction {
 
-    type: string = "CreateTodo";
+  type: string = "CreateTodo";
 
-    constructor(public text: string){
-    }
+  /**
+   * @constructor
+   *
+   * @param text a text that represent todo.
+   */
+  constructor(public text: string) {
+  }
 
 }

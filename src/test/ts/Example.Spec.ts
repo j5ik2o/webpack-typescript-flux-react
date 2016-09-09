@@ -1,6 +1,5 @@
-
 describe('Example', () => {
-    it('example', () => {
+  it('example', () => {
 
-    });
+  });
 });

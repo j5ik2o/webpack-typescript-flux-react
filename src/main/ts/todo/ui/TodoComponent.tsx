@@ -14,49 +14,49 @@ import { TodoViewModelConverter } from './TodoViewModelConverter';
  */
 export class TodoComponent extends React.Component<{}, TodoState> {
 
-    private listenerSubscription: { remove: Function };
+  private listenerSubscription: { remove: Function };
 
-    constructor(props: {}) {
-        super(props);
-        this.state = new TodoState("", new TodoRepository());
-    }
+  constructor(props: {}) {
+    super(props);
+    this.state = new TodoState('', new TodoRepository());
+  }
 
-    componentDidMount() {
-        this.listenerSubscription = todoStore.addListener(this.handleStateChange.bind(this));
-    }
+  componentDidMount() {
+    this.listenerSubscription = todoStore.addListener(this.handleStateChange.bind(this));
+  }
 
-    componentWillUnmount() {
-        this.listenerSubscription.remove();
-    }
+  componentWillUnmount() {
+    this.listenerSubscription.remove();
+  }
 
-    handleStateChange() {
-        const _state = todoStore.getState();
-        const todos = _state.getRepository().resolveAll();
-        const repository = new TodoRepository();
-        repository.storeMulti(todos);
-        const state = new TodoState(_state.currentTodo, repository);
-        this.setState(state);
-    }
+  handleStateChange() {
+    const _state = todoStore.getState();
+    const todos = _state.getRepository().resolveAll();
+    const repository = new TodoRepository();
+    repository.storeMulti(todos);
+    const state = new TodoState(_state.currentTodo, repository);
+    this.setState(state);
+  }
 
-    handleValueChange(event: React.SyntheticEvent){
-        const todo = (event.target as HTMLInputElement).value;
-        this.setState(new TodoState(todo, this.state.getRepository()));
-    }
+  handleValueChange(event: React.SyntheticEvent) {
+    const todo = (event.target as HTMLInputElement).value;
+    this.setState(new TodoState(todo, this.state.getRepository()));
+  }
 
-    handleClick() {
-        TodoActionCreator.createTodo(this.state.currentTodo);
-    }
+  handleClick() {
+    TodoActionCreator.createTodo(this.state.currentTodo);
+  }
 
-    render(): JSX.Element {
-        const todos = new TodoViewModelConverter(this.state.getRepository()).getTodoVMs();
-        return <div>
-            <input type='input' value={this.state.currentTodo} onChange={this.handleValueChange.bind(this)}/>
-            <button onClick={this.handleClick.bind(this)}>Update</button>
-            <div>
-            {todos.map((a) => {
-                return <p key={a.key}>{a.text} : {a.dateString}</p>;
-            })}
-            </div>
-        </div>;
-    }
+  render(): JSX.Element {
+    const todos = new TodoViewModelConverter(this.state.getRepository()).getTodoVMs();
+    return <div>
+      <input type='input' value={this.state.currentTodo} onChange={this.handleValueChange.bind(this)}/>
+      <button onClick={this.handleClick.bind(this)}>Update</button>
+      <div>
+        {todos.map((a) => {
+          return <p key={a.key}>{a.text} : {a.dateString}</p>;
+        })}
+      </div>
+    </div>;
+  }
 }

@@ -1,4 +1,15 @@
+/**
+ * @author Junichi Kato
+ */
 export class HelloWorldState {
-    constructor(public message, public completedMessage){
-    }
+
+  /**
+   * @constructor
+   *
+   * @param inputtedMessage a message inputted.
+   * @param completedMessage a message completed.
+   */
+  constructor(public inputtedMessage, public completedMessage) {
+  }
+
 }
